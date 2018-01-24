@@ -21,7 +21,8 @@ $dbname = 'drupal';
 $user = 'drupal';
 $password = 'drupal';
 
-$dsn = 'mysql:host='. $host .';dbname='. $dbname;
+// $dsn = 'mysql:host='. $host .';dbname='. $dbname;
+$dsn = "mysql:host=$host;dbname=$dbname";
 try {
     $conn = new PDO($dsn, $user, $password);
     $conn->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE, PDO::FETCH_OBJ);
@@ -32,6 +33,7 @@ try {
 catch(PDOException $e)
 {
     echo "Connection failed: " . $e->getMessage();
+   
 }
 
 //insert
@@ -126,4 +128,10 @@ Chain::staty();  //poziva static metod bez instancirnja novog obj
 
 $t = new DateTime();
 echo BR;
-echo $t->format('d/M/Y \a\t H:m');
+echo $t->format('d/M/Y \a\t H:m').BR;
+$time = time();
+echo date('d-m-Y',$time)."<br>";
+
+print_r($_SERVER['SERVER_NAME']);
+
+include 'forma.php';
