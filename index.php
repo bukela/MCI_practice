@@ -135,3 +135,5 @@ echo date('d-m-Y',$time)."<br>";
 print_r($_SERVER['SERVER_NAME']);
 
 include 'forma.php';
+include 'imager.php';
+// echo $_SERVER['PHP_SELF'];
